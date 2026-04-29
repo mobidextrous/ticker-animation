@@ -1,58 +1,70 @@
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: transparent;
-    color: #222;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;
+  color: #222;
 }
 
 .ticker-wrap {
-    min-height: 190px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px 20px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
 }
 
 .intro {
-    font-size: 20px;
-    margin-bottom: 4px;
+  font-size: 20px;
+  margin-bottom: 4px;
 }
 
 .number {
-    font-size: 52px;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0.5px;
-    color: #2f3a36;
-    transform: scale(1);
-    transition: transform 420ms ease;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  color: #2f3a36;
+  transform: scale(1);
+  transition: transform 420ms ease;
 }
 
 .number.settle {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .number.final {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
     transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.015);
+  }
 }
 
 .sentence {
-    font-size: 22px;
-    margin-top: 10px;
+  font-size: 22px;
+  margin-top: 10px;
 }
 
 .bracket {
-    font-size: 16px;
-    margin-top: 8px;
-    color: #555;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 900ms ease, transform 900ms ease;
+  font-size: 16px;
+  margin-top: 8px;
+  color: #555;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(6px);
+  transition: opacity 900ms ease, transform 900ms ease, filter 900ms ease;
 }
 
 .bracket.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
