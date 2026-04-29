@@ -6,7 +6,7 @@ const overshoot = Math.round(end * 1.012);
 
 const label = params.get("label") || "marketing professionals in the world.";
 const note = params.get("note") || "(that we can identify)";
-const showIntro = params.get("intro") !== "false";
+const introText = params.get("intro") || "";
 
 const duration = 4200;
 const settleDuration = 500;
@@ -24,8 +24,8 @@ if (bracket) {
   bracket.textContent = note;
 }
 
-if (intro && !showIntro) {
-  intro.style.display = "none";
+if (intro) {
+  intro.textContent = introText;
 }
 
 let startTime = null;
