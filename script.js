@@ -1,3 +1,12 @@
+const params = new URLSearchParams(window.location.search);
+
+const start = Number(params.get("start")) || 5000000;
+const end = Number(params.get("end")) || 12551236;
+const label = params.get("label") || "marketing professionals in the world.";
+const note = params.get("note") || "(that we can identify)";
+
+document.querySelector(".sentence").textContent = label;
+document.querySelector(".bracket").textContent = note;
 const start = 5000000;
 const end = 12551236;
 const overshoot = 12725000;
